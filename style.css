@@ -1,11 +1,44 @@
 body {
     display: flex;
+    min-height: 100vh;
+    min-width: 100vw;
     align-items: center;
     justify-content: center;
 }
 #MainCalculator {
     background-color: red;
+    padding: 8px;
+    border: black solid 2px;
+    border-radius: 15px;
 }
+
+#keyboard {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+.keyrow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2px;
+}
+.keybut {
+    min-width: 60px;
+    min-height: 60px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    border-radius: 10px;
+    font-size: 20px;
+}
+#screen {
+    background-color: gray;
+    min-height: 10vh;
+    margin-bottom: 5px;
+    border-radius: 10px;
+}
+
+
 .arrow {
     border: solid black;
     border-width: 0 3px 3px 0;
@@ -16,4 +49,7 @@ body {
 .left {
     transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
+}
+#Decimal {
+    font-size: 40px;
 }
