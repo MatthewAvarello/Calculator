@@ -5,40 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title> 
     <link rel="stylesheet" href="style.css">
-    <script href="main.js" defer ></script>
+    <script src="main.js" defer></script>
 </head>
 <body>
     <div id="MainCalculator">
         <div id="screen">
-            numbers
+            10 digits
         </div>
         <div id="keyboard">
             <div class="keyrow" id="keyrow1">
                 <button id="ClearAll" class="keybut">AC</button>
                 <button id="BackOne" class="keybut"><i class="arrow left"></i></button>
                 <button id="Decimal" class="keybut">.</button>
-                <button id="Division" class="keybut">÷</button>
+                <button id="divis" class="keybut opbut" data-op="/">÷</button>
             </div>
             <div class="keyrow" id="keyrow2">
-                <button id="n1" class="keybut">1</button>
-                <button id="n2" class="keybut">2</button>
-                <button id="n3" class="keybut">3</button>
-                <button id="Multiply" class="keybut">x</button>
+                <button id="n1" class="keybut numbut" onclick="numButPress(this.id)">1</button>
+                <button id="n2" class="keybut numbut" onclick="numButPress(this.id)">2</button>
+                <button id="n3" class="keybut numbut" onclick="numButPress(this.id)">3</button>
+                <button id="mul" class="keybut opbut" data-op="*">x</button>
             </div>
             <div class="keyrow" id="keyrow3" >
-                <button id="n4" class="keybut">4</button>
-                <button id="n5" class="keybut">5</button>
-                <button id="n6" class="keybut">6</button>
-                <button id="Subtract" class="keybut">-</button>
+                <button id="n4" class="keybut numbut" onclick="numButPress(this.id)">4</button>
+                <button id="n5" class="keybut numbut" onclick="numButPress(this.id)">5</button>
+                <button id="n6" class="keybut numbut" onclick="numButPress(this.id)">6</button>
+                <button id="sub" class="keybut opbut" data-op="-">-</button>
             </div>
             <div class="keyrow" id="keyrow4">
-                <button id="n7" class="keybut">7</button>
-                <button id="n8" class="keybut">8</button>
-                <button id="n9" class="keybut">9</button>
-                <button id="Addition" class="keybut">+</button>
+                <button id="n7" class="keybut numbut" onclick="numButPress(this.id)">7</button>
+                <button id="n8" class="keybut numbut" onclick="numButPress(this.id)">8</button>
+                <button id="n9" class="keybut numbut" onclick="numButPress(this.id)">9</button>
+                <button id="add" class="keybut opbut" data-op="+">+</button>
             </div>
             <div class="keyrow" id="keyrow5">
-                <button id="n0" class="keybut">0</button>
+                <button id="n0" class="keybut numbut" onclick="numButPress(this.id)">0</button>
                 <button id="equals" class="keybut">=</button>
             </div>
         </div>
