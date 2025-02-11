@@ -51,6 +51,10 @@ body {
     transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
 }
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
 #Decimal {
     font-size: 40px;
 }
