@@ -26,12 +26,13 @@ window.addEventListener("keydown",keysupport)
 
 // 77 + 2 +
 
+
 function keysupport(HUNTINGHIGHANDLOW){
     console.log("A key was pressed!")
     console.log(HUNTINGHIGHANDLOW.code)
     if (HUNTINGHIGHANDLOW.code == "Digit0"){
         console.log("Truly i tell you the digit called zero was clicked.")
-    }
+    } 
     switch (HUNTINGHIGHANDLOW.code){
         case "Digit1":
             numButPress("n1")
@@ -68,10 +69,30 @@ function keysupport(HUNTINGHIGHANDLOW){
             break;
         case "Minus":
             operatorButPress("Minus")
+            break;
+        case "KeyX":
+            operatorButPress("Multiply")
+            break;
+        case "Equal":
+            operatorButPress("Add")
+            break;
+        case "Slash":
+            operatorButPress("Slash")
+            break;
+        case "Backspace":
+            backonefunc()
+            break;
+        case "Enter":
+            equalbutpress()
+            break;
+        case "Delete":
+            clearallf()
+            break
+        case "Period":
+            dottyboy()
+            break
 
     }
-
-    
 }
 
 function backonefunc(){
@@ -158,10 +179,9 @@ function clearallf(){
     display.innerHTML = "0"
 }
 function numButPress(numberid){
-    if (display.innerHTML.length >= 10 && 20 >= display.innerHTML.length) {
+    if (display.innerHTML.length >= 10 && 20 >= display.innerHTML.length) {//
         console.log(display.innerHTML.length)
         console.log("Over")
-        return
     }
     let idarr = numberid.split('')
     let number = idarr[1]
@@ -180,8 +200,9 @@ function numButPress(numberid){
 function equalbutpress(){
     if (number1 && number2 && firstoperator){
         let result = operate(number1,number2,firstoperator)   
-        console.log("The Result is: " + result)     
-        number1 = result
+        let roundednumber = parseFloat(result.toFixed(4))
+        console.log("The Result is: " + roundednumber)     
+        number1 = roundednumber
         number2 = ""
         updatedisplay()
     }
@@ -191,6 +212,9 @@ function operatorButPress(event){
     if (event == "Minus") {
         if (number1 && number2 && firstoperator){
             secondoperator = "-"
+            equalbutpress()
+            firstoperator = secondoperator
+            updatedisplay()
             return
         } else {
             firstoperator = "-"
@@ -200,15 +224,42 @@ function operatorButPress(event){
     if (event == "Slash") {
         if (number1 && number2 && firstoperator){
             secondoperator = "/"
+            equalbutpress()
+            firstoperator = secondoperator
+            updatedisplay()
             return
         } else {
             firstoperator = "/"
             return
         }
     }
+    if (event == "Multiply") {
+        if (number1 && number2 && firstoperator){
+            secondoperator = "*"
+            equalbutpress()
+            firstoperator = secondoperator
+            updatedisplay()
+            return
+        } else {
+            firstoperator = "*"
+            return
+        }
+    }
+    if (event == "Add"){
+        if(number1 && number2 && firstoperator){
+            secondoperator = "+"
+            equalbutpress()
+            firstoperator = secondoperator
+            updatedisplay()
+            return
+        } else {
+            firstoperator = "+"
+            return
+        }
+    }
     let op = event.target.getAttribute("data-op")
     if (number1 && number2 && firstoperator){
-        let secondoperator = op
+        secondoperator = op
         equalbutpress()
         firstoperator = secondoperator
         return
