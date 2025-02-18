@@ -178,10 +178,13 @@ function clearallf(){
     secondoperator = undefined
     display.innerHTML = "0"
 }
+let variable = 15;
 function numButPress(numberid){
-    if (display.innerHTML.length >= 10 && 20 >= display.innerHTML.length) {//
+    if (display.innerHTML.length >= variable && 20 >= display.innerHTML.length) {//
+        alert("Max digit limit reached please clear")
         console.log(display.innerHTML.length)
         console.log("Over")
+        return
     }
     let idarr = numberid.split('')
     let number = idarr[1]
@@ -195,12 +198,29 @@ function numButPress(numberid){
         console.log("Number 2 is: " + number2)
     }
     updatedisplay()
+    if (display.innerHTML.length >= variable && 20 >= display.innerHTML.length) {//
+        alert("Max digit limit reached refreshing page now")
+        console.log(display.innerHTML.length)
+        console.log("Over")
+        location.reload()
+        return
+    }
 }
 // anytime 0-9 is pressed
 function equalbutpress(){
     if (number1 && number2 && firstoperator){
+        let roundednumber
         let result = operate(number1,number2,firstoperator)   
-        let roundednumber = parseFloat(result.toFixed(4))
+        if (result == "LMAO"){
+            console.log("The Result is: " + roundednumber)     
+            number1 = result
+            number2 = ""
+            updatedisplay()
+            alert("LMAO you tryed to divide by 0? You crack me up! Refreshing Page now.")
+            location.reload()
+            return
+        }
+        roundednumber = parseFloat(result.toFixed(4))
         console.log("The Result is: " + roundednumber)     
         number1 = roundednumber
         number2 = ""
@@ -319,5 +339,12 @@ console.log("TEST")
 
 
 
-
+function sleep(milliseconds) {
+    var start = new Date().getTime();
+    for (var i = 0; i < 1e7; i++) {
+      if ((new Date().getTime() - start) > milliseconds){
+        break;
+      }
+    }
+  }
 // Just for future me i Wrote 100% (Not the event listener part lol but it ws 3 lines, stack overflow had it and i was lazy:( )of this but understand absolutely none of it :). So how was trumps term? Is the world gone?
