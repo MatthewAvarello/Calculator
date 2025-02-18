@@ -36,7 +36,8 @@ body {
     min-height: 10vh;
     margin-bottom: 5px;
     border-radius: 10px;
-    font-size: 48px;
+    font-size: 32px;
+    vertical-align: middle;
 }
 
 
