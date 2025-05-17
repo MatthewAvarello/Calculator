@@ -347,4 +347,4 @@ function sleep(milliseconds) {
       }
     }
   }
-// Just for future me i Wrote 100% (Not the event listener part lol but it ws 3 lines, stack overflow had it and i was lazy:( )of this but understand absolutely none of it :). So how was trumps term? Is the world gone?
+// Still things left for improvement. Code is currently bloated but gets job done.
